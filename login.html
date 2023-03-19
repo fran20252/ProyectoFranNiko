@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Car`s luxe</title>
+    <link rel="icon" type="image/jpg" href="ICON/logo2.png"/>
+</head>
+<body  class="body_login">
+    <header class="">
+        <div class="container">
+         <a href="index.html"><h1 class="logo" id="arriba"><img src="IMG/Logo.png" alt=""></h1></a>
+          <nav class="navigation">
+            <ul>  
+              <li>
+                <button class="icon" aria-controls="primary-navigation" aria-expanded="false">
+                    <svg fill="#fff" class="hamburger" viewBox="0 0 100 100" width="3em">
+                        <rect class="line top" width="80" height="10" x="10" y="25" rx="5">
+                        </rect>
+                        <rect class="line middle" width="80" height="10" x="10" y="45" rx="5">
+                        </rect>
+                        <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5">
+                        </rect>
+                    </svg>
+                </button>
+              </li>                         
+              <li class=" menu_item" aria-controls="opened_menu"><a href="alquileres.html">Alquileres</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="experiencias.html">Experiencias/contacto</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="reseñas.html">Reseñas</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="login.html">Log In</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+
+  
+<div class="fondo-login">
+  <div class="wrapper">
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form action="#" method="post">
+        <div class="input-box">
+          <span class="icon"><ion-icon  name="mail"></ion-icon></span>
+          <input type="email" required>
+          <label>Correo Electronico</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon  name="lock-closed"></ion-icon></span>
+          <input type="password" required>
+          <label>Contraseña</label>
+        </div>
+        <div class="remember-forgot">
+          <label>
+            <span><input type="checkbox"> Recuerdame</span>
+           <a href="has_olvidado_contraseña.html">¿Has olvidado la contraseña?</a>
+          </label>
+        </div>
+        <input type="submit" class="btn" value="Log in"></input>
+        <div class="login-register">
+          <p>¿No tienes una cuenta aun?<span class="separacion"><a href="#" class="register-link">Registrate</a></p></span>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-box register">
+      <h2>Registration</h2>
+      <form action="#" method="post">
+        <div class="input-box">
+          <span class="icon"><ion-icon  name="person"></ion-icon></span>
+          <input type="text" required>
+          <label>Nombre de usuario</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon  name="mail"></ion-icon></span>
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon  name="lock-closed"></ion-icon></span>
+          <input type="password" required>
+          <label>Contraseña</label>
+        </div>
+        <div class="remember-forgot">
+          <label>
+            <span><input type="checkbox"><a href="terminos_condiciones.html"> Acepto terminos y condiciones <ion-icon name="link-outline"></ion-icon></a></span>
+          </label>
+        </div>
+        <input type="submit" class="btn" value="Register"></input>
+        <div class="login-register">
+          <p>¿Ya tienes una cuenta?<span class="separacion"><a href="#" class="login-link">Login</a></p></span>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+  
+
+
+<script>
+  /* Icono del menu. Vamos a darle funcionalidad para hacer que se oculte
+          o aparezca  según el tamaño de la ventana*/
+  $(function() {
+      //Captura del evento para mostrar u ocultar el menu
+      $(".icon").click(function() {
+          $(".menu_item").toggle();
+      });
+      $(window).resize(function() {
+          var anchura = $(this).width();
+          if (anchura > 576) {
+              $(".menu_item").show();
+          }
+      });
+  });
+</script>
+
+<script>
+  const wrapper = document.querySelector('.wrapper');
+  const loginLink = document.querySelector('.login-link');
+  const registerLink = document.querySelector('.register-link');
+
+  registerLink.addEventListener('click', () => {
+    wrapper.classList.add('active');
+  });
+
+  loginLink.addEventListener('click', () => {
+    wrapper.classList.remove('active');
+  });
+</script>
+
+<script>
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const currentState = button.getAttribute('data-state');
+      if (!currentState || currentState === 'closed') {
+        button.setAttribute('data-state', 'opened');
+        button.setAttribute('aria-expanded', 'true');
+      } else {
+        button.setAttribute('data-state', 'closed');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
+
+<script src="js/sript.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      

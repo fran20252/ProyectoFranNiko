@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Car`s luxe</title>
+    <link rel="icon" type="image/jpg" href="ICON/logo2.png"/>
+</head>
+<body>
+    <header class="">
+        <div class="container">
+         <a href="index.html"><h1 class="logo"><img src="IMG/Logo.png" alt=""></h1></a>
+          <nav class="navigation">
+            <ul>  
+              <li>
+                <button class="icon" aria-controls="primary-navigation" aria-expanded="false">
+                    <svg fill="#fff" class="hamburger" viewBox="0 0 100 100" width="3em">
+                        <rect class="line top" width="80" height="10" x="10" y="25" rx="5">
+                        </rect>
+                        <rect class="line middle" width="80" height="10" x="10" y="45" rx="5">
+                        </rect>
+                        <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5">
+                        </rect>
+                    </svg>
+                </button>
+              </li>                         
+              <li class=" menu_item" aria-controls="opened_menu"><a href="alquileres.html">Alquileres</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="experiencias.html">Experiencias/contacto</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="reseñas.html">Reseñas</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="login.html">Log In</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+<body class="body_reserva">
+    
+    <form class="cancelar-reserva">
+        <h1>Cancelar Reserva</h1>
+        <p>Por favor, introduce los detalles de tu reserva a continuación:</p>
+		<div class="form-group">
+			<label for="nombre">Nombre:</label>
+			<input type="text" id="nombre" name="nombre">
+		</div>
+		
+		<div class="form-group">
+			<label for="fecha">Fecha de reserva:</label>
+			<input type="date" id="fecha" name="fecha">
+		</div>
+		
+		<div class="form-group">
+			<label for="hora">Hora de reserva:</label>
+			<input type="time" id="hora" name="hora">
+		</div>
+		
+		<div class="form-group">
+			<label for="coche">Seleccione el coche reservado:</label>
+			<select id="coche" name="coche">
+				<option value="Ferrari 458 Italia">Ferrari 458 Italia</option>
+				<option value="Ferrari F8 Spider">Ferrari F8 Spider</option>
+				<option value="Ferrari F40">Ferrari F40</option>
+				<option value="Bentley Continental GT">Bentley Continental GT</option>
+				<option value="Bentley Bentayga">Bentley Bentayga</option>
+				<option value="Rolls-Royce Wraith">Rolls-Royce Wraith</option>
+				<option value="Rolls-Royce Ghost">Rolls-Royce Ghost</option>
+				<option value="Lamborghini Aventador">Lamborghini Aventador</option>
+				<option value="Lamborghini Huracan">Lamborghini Huracan</option>
+				<option value="Lamborghini Urus">Lamborghini Urus</option>
+				<option value="Lamborghini Diablo">Lamborghini Diablo</option>
+				<option value="Maserati GranTurismo">Maserati GranTurismo</option>
+				<option value="Maserati MC20">Maserati MC20</option>
+				<option value="Maserati Levante">Maserati Levante</option>
+				<option value="Maserati Quattroporte">Maserati Quattroporte</option>
+			</select>
+		</div>
+
+        <div class="form-group">
+            <label for="motivo">Describa brevemente el motivo de la cancelación:</label>
+            <textarea id="motivo" name="motivo"></textarea>
+        </div>    
+		
+		<input type="submit" value="Cancelar Reserva">
+	</form>
+
+  <script>
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const currentState = button.getAttribute('data-state');
+        if (!currentState || currentState === 'closed') {
+          button.setAttribute('data-state', 'opened');
+          button.setAttribute('aria-expanded', 'true');
+        } else {
+          button.setAttribute('data-state', 'closed');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Car`s luxe</title>
+    <link rel="icon" type="image/jpg" href="ICON/logo2.png"/>
+</head>
+<body>
+    <header class="">
+        <div class="container">
+         <a href="index.html"><h1 class="logo"><img src="IMG/Logo.png" alt=""></h1></a>
+          <nav class="navigation">
+            <ul>  
+              <li>
+                <button class="icon" aria-controls="primary-navigation" aria-expanded="false">
+                    <svg fill="#fff" class="hamburger" viewBox="0 0 100 100" width="3em">
+                        <rect class="line top" width="80" height="10" x="10" y="25" rx="5">
+                        </rect>
+                        <rect class="line middle" width="80" height="10" x="10" y="45" rx="5">
+                        </rect>
+                        <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5">
+                        </rect>
+                    </svg>
+                </button>
+              </li>                         
+              <li class=" menu_item" aria-controls="opened_menu"><a href="alquileres.html">Alquileres</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="experiencias.html">Experiencias/contacto</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="reseñas.html">Reseñas</a></li>
+              <li class=" menu_item" aria-controls="opened_menu"><a href="login.html">Log In</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+<body>
+<div class="body">
+    <div class="cajon">
+        <h1>¿Has olvidado tu contraseña?</h1>
+        <p>Introduce tu dirección de correo electrónico y te enviaremos instrucciones para restablecer tu contraseña.</p>
+        <form action="#" method="post">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required class="correos">
+            <input type="submit">
+        </form>
+    </div>
+</div>
+
+<script>
+    /* Icono del menu. Vamos a darle funcionalidad para hacer que se oculte
+            o aparezca  según el tamaño de la ventana*/
+    $(function() {
+        //Captura del evento para mostrar u ocultar el menu
+        $(".icon").click(function() {
+            $(".menu_item").toggle();
+        });
+        $(window).resize(function() {
+            var anchura = $(this).width();
+            if (anchura > 576) {
+                $(".menu_item").show();
+            }
+        });
+    });
+  </script>
+
+<script>
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const currentState = button.getAttribute('data-state');
+        if (!currentState || currentState === 'closed') {
+          button.setAttribute('data-state', 'opened');
+          button.setAttribute('aria-expanded', 'true');
+        } else {
+          button.setAttribute('data-state', 'closed');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
+  <script src="js/sript.js"></script>
+</body>
+</html>
